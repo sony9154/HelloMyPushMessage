@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQ4-jT-U9V">
+                                <rect key="frame" x="527" y="20" width="53" height="30"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MUR-y9-AQp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhU-L1-XTx">
+                                <rect key="frame" x="476" y="20" width="41" height="30"/>
+                                <state key="normal" title="Photo"/>
+                                <connections>
+                                    <action selector="photoBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ChA-Tx-0yQ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sHF-Gc-xg8">
+                                <rect key="frame" x="16" y="59" width="564" height="541"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxI-dH-Wnu">
+                                <rect key="frame" x="432" y="21" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0kO-MU-woB"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVD-ia-YkE" customClass="ChattingView">
+                                <rect key="frame" x="0.0" y="59" width="600" height="541"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="96n-EE-JCi" appends="YES" id="xO6-4w-vVN"/>
+                                </connections>
+                            </scrollView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7f-1B-vXx">
+                                <rect key="frame" x="16" y="20" width="384" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sHF-Gc-xg8" firstAttribute="leading" secondItem="a7f-1B-vXx" secondAttribute="leading" id="2uZ-bc-IZL"/>
+                            <constraint firstItem="sHF-Gc-xg8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="41H-PC-7Gn"/>
+                            <constraint firstItem="sHF-Gc-xg8" firstAttribute="top" secondItem="JxI-dH-Wnu" secondAttribute="bottom" constant="8" symbolic="YES" id="50p-aF-iYn"/>
+                            <constraint firstItem="rQ4-jT-U9V" firstAttribute="leading" secondItem="KhU-L1-XTx" secondAttribute="trailing" constant="10" id="5kP-l4-2AH"/>
+                            <constraint firstItem="AVD-ia-YkE" firstAttribute="top" secondItem="JxI-dH-Wnu" secondAttribute="bottom" constant="8" id="AsU-xz-Kx1"/>
+                            <constraint firstItem="a7f-1B-vXx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="DfF-5J-Yaj"/>
+                            <constraint firstItem="AVD-ia-YkE" firstAttribute="top" secondItem="JxI-dH-Wnu" secondAttribute="bottom" constant="8" symbolic="YES" id="EJX-Mu-HEu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a7f-1B-vXx" secondAttribute="trailing" constant="180" id="RgY-fC-yXg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AVD-ia-YkE" secondAttribute="bottom" id="XHH-3T-lJ3"/>
+                            <constraint firstItem="sHF-Gc-xg8" firstAttribute="trailing" secondItem="rQ4-jT-U9V" secondAttribute="trailing" id="bbF-NR-bfG"/>
+                            <constraint firstItem="AVD-ia-YkE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dOo-fX-662"/>
+                            <constraint firstItem="AVD-ia-YkE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="fXH-qG-eQ8"/>
+                            <constraint firstItem="KhU-L1-XTx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hwV-Em-7vL"/>
+                            <constraint firstItem="sHF-Gc-xg8" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="iA5-12-WNs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AVD-ia-YkE" secondAttribute="trailing" constant="-20" id="ifp-kD-a6B"/>
+                            <constraint firstItem="JxI-dH-Wnu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="1" id="jO3-aO-J3K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rQ4-jT-U9V" secondAttribute="trailing" id="kwy-t1-su8"/>
+                            <constraint firstItem="rQ4-jT-U9V" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mzT-XT-YvW"/>
+                            <constraint firstItem="KhU-L1-XTx" firstAttribute="leading" secondItem="JxI-dH-Wnu" secondAttribute="trailing" constant="8" id="tPA-DG-gDZ"/>
+                            <constraint firstAttribute="trailing" secondItem="AVD-ia-YkE" secondAttribute="trailing" id="uiR-ES-hw0"/>
+                            <constraint firstItem="AVD-ia-YkE" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="xED-a0-jyY"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="AsU-xz-Kx1"/>
+                                <exclude reference="fXH-qG-eQ8"/>
+                                <exclude reference="ifp-kD-a6B"/>
+                                <exclude reference="XHH-3T-lJ3"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="chattingView" destination="AVD-ia-YkE" id="ez3-JE-x9X"/>
+                        <outlet property="inputTextField" destination="a7f-1B-vXx" id="izC-UL-ecD"/>
+                        <outlet property="logTextView" destination="sHF-Gc-xg8" id="YrJ-fP-YBw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="96n-EE-JCi">
+                    <connections>
+                        <action selector="chattingViewTapped:" destination="BYZ-38-t0r" id="YIg-mD-9Hj"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="567" y="377"/>
+        </scene>
+    </scenes>
+</document>
